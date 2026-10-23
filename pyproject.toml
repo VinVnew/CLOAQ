@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cloaq"
+version = "0.1.0"
+description = "CLOAQ: combined logic and angle (phase) obfuscation for quantum circuits"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "CLOAQ authors" }]
+keywords = ["quantum computing", "qiskit", "obfuscation", "logic locking", "IP protection", "hardware security"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Topic :: Security :: Cryptography",
+    "Typing :: Typed",
+]
+dependencies = ["qiskit>=1.0"]
+
+[project.optional-dependencies]
+sim = ["qiskit-aer>=0.14"]
+dev = ["qiskit-aer>=0.14", "pytest>=7", "pytest-cov", "ruff>=0.5", "pandas", "nbformat", "nbconvert", "ipykernel"]
+
+[project.scripts]
+cloaq = "cloaq.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/VinVnew/CLOAQ"
+Issues = "https://github.com/VinVnew/CLOAQ/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+cloaq = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.ruff]
+extend-exclude = ["research"]
+line-length = 100
+target-version = "py310"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "W"]

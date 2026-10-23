@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata below."
+title: "cloaq: combined logic and angle obfuscation for quantum circuits"
+type: software
+version: 0.1.0
+license: MIT
+authors:
+  - name: "CLOAQ authors"   # TODO: replace with the real author list
+repository-code: "https://github.com/VinVnew/CLOAQ"
+preferred-citation:
+  type: conference-paper
+  title: "CLOAQ: Combined Logic and Angle Obfuscation for Quantum Circuits"
+  collection-title: "2026 IEEE International Symposium on Circuits and Systems (ISCAS)"
+  year: 2026
+  authors:
+    - name: "CLOAQ authors"   # TODO: replace with the real author list
